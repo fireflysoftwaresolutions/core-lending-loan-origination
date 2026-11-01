@@ -29,6 +29,8 @@ public final class SpringDataDraftIntakeServiceImpl implements DraftIntakeStore 
     private final ApplicationSubStatusIntakeRepository subStatuses;
     private final SubmissionChannelIntakeRepository channels;
     private final SimulationIntakeRepository simulations;
+    private final RoleCodeIntakeRepository roles;
+    private final ApplicationPartyIntakeRepository parties;
     @Autowired public SpringDataDraftIntakeServiceImpl(ObjectProvider<DraftIntakeAuditRootImpl> resources){this(resources.getIfAvailable());}
     public SpringDataDraftIntakeServiceImpl(DraftIntakeAuditRootImpl owner){
         this.owner=owner;template=owner==null?null:owner.template();
@@ -38,6 +40,8 @@ public final class SpringDataDraftIntakeServiceImpl implements DraftIntakeStore 
         subStatuses=factory==null?null:factory.getRepository(ApplicationSubStatusIntakeRepository.class);
         channels=factory==null?null:factory.getRepository(SubmissionChannelIntakeRepository.class);
         simulations=factory==null?null:factory.getRepository(SimulationIntakeRepository.class);
+        roles=factory==null?null:factory.getRepository(RoleCodeIntakeRepository.class);
+        parties=factory==null?null:factory.getRepository(ApplicationPartyIntakeRepository.class);
     }
     @Override public Mono<DraftIntakeReceipt> create(DraftIntakeRequest request){
         final DraftIntakeIntent intent;
@@ -55,20 +59,26 @@ public final class SpringDataDraftIntakeServiceImpl implements DraftIntakeStore 
                             || !"ONLINE".equals(channel.getCode()) || !Boolean.TRUE.equals(channel.getIsActive()) || channel.getSubmissionChannelId()==null)return Mono.error(unavailable());
                         return simulations.findBySimulationId(intent.simulationId()).switchIfEmpty(Mono.error(invalidInput())).flatMap(simulation->{
                             try{intent.requireSimulation(simulation);}catch(IllegalArgumentException mismatch){return Mono.error(invalidInput());}
-                            UUID applicationId=UUID.randomUUID();Instant created=owner.clock().instant().truncatedTo(ChronoUnit.MICROS);
-                            var app=LoanApplication.builder().loanApplicationId(applicationId).applicationNumber(UUID.randomUUID())
-                                .applicationStatusId(status.getApplicationStatusId()).applicationSubStatusId(sub.getApplicationSubStatusId())
-                                .submissionChannelId(channel.getSubmissionChannelId()).applicationDate(created.atOffset(ZoneOffset.UTC).toLocalDate())
-                                .simulationId(intent.simulationId()).loanPurpose(intent.purpose()).createdAt(LocalDateTime.ofInstant(created,ZoneOffset.UTC))
-                                .updatedAt(LocalDateTime.ofInstant(created,ZoneOffset.UTC)).build();
-                            String evidence=evidence(intent,permit,applicationId,created,status.getApplicationStatusId(),sub.getApplicationSubStatusId(),channel.getSubmissionChannelId());
-                            return Mono.just(new DraftIntakeAuditRootImpl.Plan<DraftIntakeReceipt>(applicationId,evidence,Optional.empty(),record->{
-                                var row=row(intent,permit,applicationId,created,record);
-                                return insert(app).then(insert(row)).then(retained(permit)).flatMap(read->read.isEmpty()?Mono.error(unavailable()):
-                                    verifyApplication(intent,permit,read.orElseThrow()).map(loaded->{
-                                        if(!row.equals(loaded))throw unavailable();return receipt(loaded,false);
-                                    }));
-                            }));
+                            return one(roles.findAllByCode("PRIMARY_APPLICANT")).flatMap(role->{
+                                if(!"PRIMARY_APPLICANT".equals(role.getCode()) || !Boolean.TRUE.equals(role.getIsActive()) || role.getRoleCodeId()==null)return Mono.error(unavailable());
+                                UUID applicationId=UUID.randomUUID();Instant created=owner.clock().instant().truncatedTo(ChronoUnit.MICROS);
+                                var app=LoanApplication.builder().loanApplicationId(applicationId).applicationNumber(UUID.randomUUID())
+                                    .applicationStatusId(status.getApplicationStatusId()).applicationSubStatusId(sub.getApplicationSubStatusId())
+                                    .submissionChannelId(channel.getSubmissionChannelId()).applicationDate(created.atOffset(ZoneOffset.UTC).toLocalDate())
+                                    .simulationId(intent.simulationId()).loanPurpose(intent.purpose()).createdAt(LocalDateTime.ofInstant(created,ZoneOffset.UTC))
+                                    .updatedAt(LocalDateTime.ofInstant(created,ZoneOffset.UTC)).build();
+                                var primary=ApplicationParty.builder().applicationPartyId(UUID.randomUUID()).loanApplicationId(applicationId)
+                                    .partyId(intent.partyId()).roleCodeId(role.getRoleCodeId()).isPrimary(true)
+                                    .createdAt(app.getCreatedAt()).updatedAt(app.getCreatedAt()).build();
+                                String evidence=evidence(intent,permit,applicationId,created,status.getApplicationStatusId(),sub.getApplicationSubStatusId(),channel.getSubmissionChannelId(),primary.getApplicationPartyId(),role.getRoleCodeId());
+                                return Mono.just(new DraftIntakeAuditRootImpl.Plan<DraftIntakeReceipt>(applicationId,evidence,Optional.empty(),record->{
+                                    var row=row(intent,permit,applicationId,created,record);
+                                    return insert(app).then(insert(primary)).then(insert(row)).then(retained(permit)).flatMap(read->read.isEmpty()?Mono.error(unavailable()):
+                                        verifyApplication(intent,permit,read.orElseThrow(),primary).map(loaded->{
+                                            if(!row.equals(loaded))throw unavailable();return receipt(loaded,false);
+                                        }));
+                                }));
+                            });
                         });
                     }));
                 }));
@@ -84,7 +94,10 @@ public final class SpringDataDraftIntakeServiceImpl implements DraftIntakeStore 
             return rows.isEmpty()?Optional.empty():Optional.of(rows.getFirst());
         });
     }
-    private Mono<DraftIntake> verifyApplication(DraftIntakeIntent intent,DraftIntakeAdmission.Permit permit,DraftIntake row){return Mono.defer(()->{
+    private Mono<DraftIntake> verifyApplication(DraftIntakeIntent intent,DraftIntakeAdmission.Permit permit,DraftIntake row){
+        return verifyApplication(intent,permit,row,null);
+    }
+    private Mono<DraftIntake> verifyApplication(DraftIntakeIntent intent,DraftIntakeAdmission.Permit permit,DraftIntake row,ApplicationParty expectedPrimary){return Mono.defer(()->{
         DraftIntakeIntent historical;
         try{historical=new DraftIntakeIntent(row.requestId(),row.simulationId(),row.productId(),row.partyId(),row.requestedAmount(),row.term(),row.currency(),row.purpose());}
         catch(RuntimeException malformed){return Mono.error(unavailable());}
@@ -96,7 +109,14 @@ public final class SpringDataDraftIntakeServiceImpl implements DraftIntakeStore 
         return template.selectOne(Query.query(Criteria.where("loanApplicationId").is(row.applicationId())),LoanApplication.class)
             .filter(app->row.applicationId().equals(app.getLoanApplicationId()) && row.simulationId().equals(app.getSimulationId())
                 && Objects.equals(row.purpose(),app.getLoanPurpose()) && app.getApplicationStatusId()!=null && app.getApplicationSubStatusId()!=null)
-            .switchIfEmpty(Mono.error(unavailable())).thenReturn(row);
+            .switchIfEmpty(Mono.error(unavailable()))
+            .then(one(parties.findAllByLoanApplicationIdAndIsPrimaryTrue(row.applicationId())))
+            .filter(party->party.getApplicationPartyId()!=null && row.applicationId().equals(party.getLoanApplicationId())
+                && row.partyId().equals(party.getPartyId()) && Boolean.TRUE.equals(party.getIsPrimary()) && party.getRoleCodeId()!=null
+                && (expectedPrimary==null || expectedPrimary.equals(party)))
+            .switchIfEmpty(Mono.error(unavailable()))
+            .flatMap(party->parties.verifyRetainedPrimary(row.resourceTenantId(),row.applicationId(),row.partyId(),party.getApplicationPartyId()))
+            .filter(Boolean.TRUE::equals).switchIfEmpty(Mono.error(unavailable())).thenReturn(row);
     });}
     private <T> Mono<T> one(Flux<T> values){return values.take(2).collectList().flatMap(rows->rows.size()==1?Mono.just(rows.getFirst()):Mono.error(unavailable()));}
     private <T> Mono<Void> insert(T row){var strategy=template.getDataAccessStrategy();var mapper=strategy.getStatementMapper().forType(row.getClass());
@@ -111,10 +131,10 @@ public final class SpringDataDraftIntakeServiceImpl implements DraftIntakeStore 
     }
     static DraftIntakeReceipt receipt(DraftIntake row,boolean replay){return new DraftIntakeReceipt(row.requestId(),row.applicationId(),row.simulationId(),row.productId(),row.partyId(),
         row.requestedAmount(),row.term(),row.currency(),row.purpose(),"DRAFT","PENDING_DOCUMENTS",row.createdAt(),replay,row.intentDigest());}
-    private static String evidence(DraftIntakeIntent intent,DraftIntakeAdmission.Permit permit,UUID app,Instant created,UUID status,UUID sub,UUID channel){
+    private static String evidence(DraftIntakeIntent intent,DraftIntakeAdmission.Permit permit,UUID app,Instant created,UUID status,UUID sub,UUID channel,UUID primary,UUID role){
         try{var bytes=new java.io.ByteArrayOutputStream();var out=new java.io.DataOutputStream(bytes);
-            for(String value:List.of("LENDING_INTAKE_EFFECT_1",intent.digest(),permit.resourceTenantId().toString(),permit.bindingId().toString(),Long.toString(permit.bindingVersion()),
-                permit.bindingDigest(),app.toString(),created.toString(),status.toString(),sub.toString(),channel.toString())){var text=value.getBytes(java.nio.charset.StandardCharsets.UTF_8);out.writeInt(text.length);out.write(text);}
+            for(String value:List.of("LENDING_INTAKE_EFFECT_2",intent.digest(),permit.resourceTenantId().toString(),permit.bindingId().toString(),Long.toString(permit.bindingVersion()),
+                permit.bindingDigest(),app.toString(),created.toString(),status.toString(),sub.toString(),channel.toString(),primary.toString(),role.toString())){var text=value.getBytes(java.nio.charset.StandardCharsets.UTF_8);out.writeInt(text.length);out.write(text);}
             return HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-256").digest(bytes.toByteArray()));
         }catch(java.io.IOException|java.security.NoSuchAlgorithmException impossible){throw unavailable();}
     }

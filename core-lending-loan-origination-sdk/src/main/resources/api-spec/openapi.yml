@@ -4564,6 +4564,8 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/ApplicationPartyDTO"
+      security:
+      - lendingIntakeBearer: []
   /api/v1/application-parties/by-application/{applicationId}/primary:
     get:
       tags:
@@ -4600,6 +4602,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ApplicationPartyDTO"
+      security:
+      - lendingIntakeBearer: []
 components:
   schemas:
     LoanApplicationDTO:
