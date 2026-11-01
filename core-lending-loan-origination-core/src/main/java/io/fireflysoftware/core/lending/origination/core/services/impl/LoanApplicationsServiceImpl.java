@@ -17,6 +17,7 @@
 
 package io.fireflysoftware.core.lending.origination.core.services.impl;
 
+import io.fireflysoftware.core.lending.origination.core.intake.impl.GovernedDraftWriteErrorMapperImpl;
 import org.fireflyframework.core.filters.FilterRequest;
 import org.fireflyframework.core.filters.FilterUtils;
 import org.fireflyframework.core.queries.PaginationRequest;
@@ -74,7 +75,7 @@ public class LoanApplicationsServiceImpl implements LoanApplicationsService {
                 })
                 .map(mapper::toEntity)
                 .flatMap(repository::save)
-                .map(mapper::toDTO);
+                .map(mapper::toDTO).onErrorMap(GovernedDraftWriteErrorMapperImpl::map);
     }
 
     @Override
@@ -90,12 +91,12 @@ public class LoanApplicationsServiceImpl implements LoanApplicationsService {
                     mapper.updateEntityFromDto(dto, existing);
                     return repository.save(existing);
                 })
-                .map(mapper::toDTO);
+                .map(mapper::toDTO).onErrorMap(GovernedDraftWriteErrorMapperImpl::map);
     }
 
     @Override
     public Mono<Void> deleteLoanApplication(UUID applicationId) {
         return repository.findById(applicationId)
-                .flatMap(repository::delete);
+                .flatMap(repository::delete).onErrorMap(GovernedDraftWriteErrorMapperImpl::map);
     }
 }
