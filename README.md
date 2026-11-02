@@ -17,6 +17,10 @@ Developed by the Firefly Software Foundation. [dev@fireflysoftware.io](mailto:de
 [![Java](https://img.shields.io/badge/Java-25-orange.svg)](https://openjdk.java.net/projects/jdk/25/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-green.svg)](https://spring.io/projects/spring-boot)
 
+## Governed draft intake
+
+See [draft intake runtime and recovery](docs/draft-intake-runtime.md) for the implemented authenticated operation, configuration, generated SDK boundary, and remaining lifecycle requirements.
+
 ## Overview
 
 The **Core Lending Loan Origination Microservice** is a critical component of the **Firefly OpenCore Banking Platform**, developed by **Firefly Software Foundation** under the Apache 2.0 license. This microservice is responsible for managing the complete loan origination process, from initial application submission through underwriting decisions and scoring.
