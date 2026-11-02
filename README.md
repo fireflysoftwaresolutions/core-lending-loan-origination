@@ -25,6 +25,10 @@ See [draft intake runtime and recovery](docs/draft-intake-runtime.md) for the im
 
 See [managed Loan evidence association](docs/managed-evidence-association.md) for the implemented reference-only owner operation, original-action recovery, exact deployment grants, source51/native35 qualification and remaining cross-owner integration.
 
+## Initial loan contract basis
+
+See [the initial contract-basis reader](docs/initial-loan-contract-basis.md) for the current primary-applicant and original intake observation, required server-owned configuration, generated SDK boundary, audit integrity checks, and separate contract-journey gates. The reader does not create a contract or approve a loan.
+
 ## Overview
 
 The **Core Lending Loan Origination Microservice** is a critical component of the **Firefly OpenCore Banking Platform**, developed by **Firefly Software Foundation** under the Apache 2.0 license. This microservice is responsible for managing the complete loan origination process, from initial application submission through underwriting decisions and scoring.
