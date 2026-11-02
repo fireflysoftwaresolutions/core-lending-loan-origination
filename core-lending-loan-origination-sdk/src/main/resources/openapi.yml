@@ -2175,6 +2175,141 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/SimulationDTO"
+  /api/v1/managed-application-evidence/applications/{applicationId}/actions/{actionId}:
+    get:
+      tags:
+      - application-evidence-controller
+      summary: Read the original immutable association or prove no association under
+        the current managed application
+      operationId: observeManagedApplicationEvidence
+      parameters:
+      - name: applicationId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: actionId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: X-Idempotency-Key
+        in: header
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
+        required: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Existing exact association and canonical pair verified
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationReceipt"
+        "204":
+          description: Current managed application proved; no original association
+            exists
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationReceipt"
+        "401":
+          description: Bearer authentication refused
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationReceipt"
+        "403":
+          description: Current original party read authority refused
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationReceipt"
+        "503":
+          description: OBSERVATION_UNAVAILABLE without dispatching a write
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationError"
+      security:
+      - lendingIntakeBearer: []
+    post:
+      tags:
+      - application-evidence-controller
+      summary: Attach an exact verified Document reference under current signed application
+        and party authority
+      operationId: attachManagedApplicationEvidence
+      parameters:
+      - name: applicationId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: actionId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EvidenceAssociationRequest"
+        required: true
+      responses:
+        "201":
+          description: Original association committed with pending verification
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationReceipt"
+        "200":
+          description: Exact original association replayed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationReceipt"
+        "400":
+          description: Invalid original reference or path binding
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationReceipt"
+        "401":
+          description: Bearer authentication refused
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationReceipt"
+        "403":
+          description: Current original party authority refused
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationReceipt"
+        "409":
+          description: Original action already has different reference terms
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationError"
+        "503":
+          description: "REFUSED before dispatch or after proven rollback, OUTCOME_UNKNOWN,\
+            \ or COMMITTED_RESPONSE_UNAVAILABLE; recover same action"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationError"
+      security:
+      - lendingIntakeBearer: []
+      x-disable-idempotency: true
   /api/v1/loan-applications:
     get:
       tags:
@@ -5703,6 +5838,133 @@ components:
           format: date-time
           readOnly: true
       description: A persisted lending simulation (PERSONAL_LOAN or LEASING).
+    EvidenceAssociationRequest:
+      required:
+      - actionId
+      - applicationId
+      - contentDigest
+      - documentId
+      - documentIntentDigest
+      - documentResourceTenantId
+      - documentStoredAt
+      - documentTypeCode
+      - fileName
+      - mediaType
+      - partyId
+      type: object
+      properties:
+        actionId:
+          type: string
+          format: uuid
+        applicationId:
+          type: string
+          format: uuid
+        partyId:
+          type: string
+          format: uuid
+        documentResourceTenantId:
+          type: string
+          format: uuid
+        documentId:
+          type: string
+          format: uuid
+        fileName:
+          maxLength: 200
+          minLength: 0
+          type: string
+        documentTypeCode:
+          pattern: "[A-Z][A-Z0-9_]{0,49}"
+          type: string
+        mediaType:
+          maxLength: 100
+          minLength: 0
+          type: string
+        contentLength:
+          maximum: 2097152
+          minimum: 1
+          type: integer
+          format: int64
+        contentDigest:
+          pattern: "[a-f0-9]{64}"
+          type: string
+        documentIntentDigest:
+          pattern: "[a-f0-9]{64}"
+          type: string
+        documentStoredAt:
+          $ref: "#/components/schemas/FireflyInstant"
+    EvidenceAssociationReceipt:
+      required:
+      - attachedAt
+      - documentStoredAt
+      type: object
+      properties:
+        actionId:
+          type: string
+          format: uuid
+        applicationId:
+          type: string
+          format: uuid
+        partyId:
+          type: string
+          format: uuid
+        resourceTenantId:
+          type: string
+          format: uuid
+        associationId:
+          type: string
+          format: uuid
+        documentResourceTenantId:
+          type: string
+          format: uuid
+        documentId:
+          type: string
+          format: uuid
+        documentTypeId:
+          type: string
+          format: uuid
+        documentTypeCode:
+          type: string
+        fileName:
+          type: string
+        mediaType:
+          type: string
+        contentLength:
+          type: integer
+          format: int64
+        contentDigest:
+          type: string
+        documentIntentDigest:
+          type: string
+        documentStoredAt:
+          $ref: "#/components/schemas/FireflyInstant"
+        state:
+          type: string
+        verificationStatus:
+          type: string
+        attachedAt:
+          $ref: "#/components/schemas/FireflyInstant"
+        replayed:
+          type: boolean
+        intentDigest:
+          type: string
+    EvidenceAssociationError:
+      type: object
+      properties:
+        actionId:
+          type: string
+          format: uuid
+        code:
+          type: string
+        outcome:
+          type: string
+          enum:
+          - REFUSED
+          - CONFLICT
+          - OUTCOME_UNKNOWN
+          - COMMITTED_RESPONSE_UNAVAILABLE
+          - OBSERVATION_UNAVAILABLE
+        recovery:
+          type: string
     DraftIntakeRequest:
       required:
       - currency
@@ -6288,6 +6550,9 @@ components:
           format: int32
       description: Represents a paginated response containing a list of items and
         pagination metadata.
+    FireflyInstant:
+      type: string
+      format: date-time
   securitySchemes:
     lendingIntakeBearer:
       type: http
