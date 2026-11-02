@@ -1,0 +1,11 @@
+# Governed draft intake runtime
+
+The authenticated draft intake owns the application, its primary borrower relationship, the immutable intake receipt, and the paired audit event/outbox in one bounded Core transaction. Domain calls the original OpenAPI-generated Core SDK; Experience calls Domain. Only this Core persists the business records through Spring Data.
+
+The Web application includes the resource-server and PostgreSQL cache runtime dependencies. The optional `lending.intake.enabled` switch enables the intake capability; it does not control the global resource-server switch. Disabling intake must not make unrelated routes public. Default, development, testing, and production receiver configurations are checked independently, including invalid signatures and the separate explicit global disable setting.
+
+Configure the independent technical cache using `CACHE_DB_HOST`, `CACHE_DB_PORT`, `CACHE_DB_NAME`, `CACHE_DB_USERNAME`, `CACHE_DB_PASSWORD`, `CACHE_DB_SSL_MODE`, and `CACHE_DB_SCHEMA`. Provision its schema and cache table with the framework's deployment tooling before startup: automatic schema creation is disabled. Supply credentials through the deployment secret mechanism. The default TLS mode is `verify-full`; the owned loopback test profile is not a production credential or TLS configuration.
+
+The current three-service qualification exercised creation, exact replay, changed-intent conflict, invalid inputs, caller/scope/party refusals, concurrent requests for one action, recovery after a committed write whose response view was unavailable, completed-audit-accessor refusal, and restart against the same PostgreSQL state. Original borrower and signed human identities remain preserved. The global receiver tests run in addition to that controlled issuer/PDP integration.
+
+This operation produces a DRAFT application in PENDING_DOCUMENTS. It does not approve credit, verify submitted documents, issue an offer, sign a contract, disburse funds, or implement servicing and collections. Audit/outbox persistence is checked; queue delivery and external providers remain separate integration requirements. Institution-specific identity, policy, deployment authorization, and the wider lending lifecycle still require validation.

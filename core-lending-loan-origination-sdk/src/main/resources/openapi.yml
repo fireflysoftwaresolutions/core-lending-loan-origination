@@ -69,8 +69,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -96,8 +98,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -129,8 +133,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -159,8 +165,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -192,8 +200,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -231,8 +241,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -261,8 +273,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -294,8 +308,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -333,8 +349,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -363,8 +381,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -396,8 +416,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -435,8 +457,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -465,8 +489,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -498,8 +524,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -537,8 +565,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -567,8 +597,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -600,8 +632,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -639,8 +673,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -669,8 +705,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -702,8 +740,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -741,8 +781,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -771,8 +813,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -804,8 +848,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -843,8 +889,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -873,8 +921,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -906,8 +956,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -945,8 +997,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -975,8 +1029,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1008,8 +1064,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1047,8 +1105,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1076,8 +1136,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1108,8 +1170,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1146,8 +1210,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1176,8 +1242,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1209,8 +1277,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1248,8 +1318,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1278,8 +1350,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1311,8 +1385,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1350,8 +1426,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1380,8 +1458,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1413,8 +1493,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1452,8 +1534,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1482,8 +1566,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1515,8 +1601,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1554,8 +1642,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1584,8 +1674,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1617,8 +1709,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1656,8 +1750,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1686,8 +1782,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1719,8 +1817,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1758,8 +1858,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1782,8 +1884,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1809,8 +1913,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1842,8 +1948,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1866,8 +1974,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1893,8 +2003,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1926,8 +2038,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1950,8 +2064,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -1977,8 +2093,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -2010,8 +2128,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -2029,8 +2149,10 @@ paths:
       parameters:
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -2053,6 +2175,141 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/SimulationDTO"
+  /api/v1/managed-application-evidence/applications/{applicationId}/actions/{actionId}:
+    get:
+      tags:
+      - application-evidence-controller
+      summary: Read the original immutable association or prove no association under
+        the current managed application
+      operationId: observeManagedApplicationEvidence
+      parameters:
+      - name: applicationId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: actionId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: X-Idempotency-Key
+        in: header
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
+        required: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Existing exact association and canonical pair verified
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationReceipt"
+        "204":
+          description: Current managed application proved; no original association
+            exists
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationReceipt"
+        "401":
+          description: Bearer authentication refused
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationReceipt"
+        "403":
+          description: Current original party read authority refused
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationReceipt"
+        "503":
+          description: OBSERVATION_UNAVAILABLE without dispatching a write
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationError"
+      security:
+      - lendingIntakeBearer: []
+    post:
+      tags:
+      - application-evidence-controller
+      summary: Attach an exact verified Document reference under current signed application
+        and party authority
+      operationId: attachManagedApplicationEvidence
+      parameters:
+      - name: applicationId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: actionId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EvidenceAssociationRequest"
+        required: true
+      responses:
+        "201":
+          description: Original association committed with pending verification
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationReceipt"
+        "200":
+          description: Exact original association replayed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationReceipt"
+        "400":
+          description: Invalid original reference or path binding
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationReceipt"
+        "401":
+          description: Bearer authentication refused
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationReceipt"
+        "403":
+          description: Current original party authority refused
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationReceipt"
+        "409":
+          description: Original action already has different reference terms
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationError"
+        "503":
+          description: "REFUSED before dispatch or after proven rollback, OUTCOME_UNKNOWN,\
+            \ or COMMITTED_RESPONSE_UNAVAILABLE; recover same action"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvidenceAssociationError"
+      security:
+      - lendingIntakeBearer: []
+      x-disable-idempotency: true
   /api/v1/loan-applications:
     get:
       tags:
@@ -2114,8 +2371,10 @@ paths:
           type: boolean
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -2135,8 +2394,10 @@ paths:
       parameters:
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -2210,8 +2471,10 @@ paths:
         example: DESC
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -2237,8 +2500,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -2312,8 +2577,10 @@ paths:
         example: DESC
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -2339,8 +2606,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -2415,8 +2684,10 @@ paths:
         example: DESC
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -2442,8 +2713,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -2517,8 +2790,10 @@ paths:
         example: DESC
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -2544,8 +2819,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -2619,8 +2896,10 @@ paths:
         example: DESC
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -2646,8 +2925,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -2721,8 +3002,10 @@ paths:
         example: DESC
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -2748,8 +3031,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -2823,8 +3108,10 @@ paths:
         example: DESC
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -2850,8 +3137,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -2925,8 +3214,10 @@ paths:
         example: DESC
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -2952,8 +3243,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -3027,8 +3320,10 @@ paths:
         example: DESC
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -3054,8 +3349,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -3092,8 +3389,10 @@ paths:
           $ref: "#/components/schemas/PaginationRequest"
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -3118,8 +3417,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -3193,8 +3494,10 @@ paths:
         example: DESC
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -3220,8 +3523,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -3295,8 +3600,10 @@ paths:
         example: DESC
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -3322,8 +3629,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -3398,8 +3707,10 @@ paths:
         example: DESC
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -3425,8 +3736,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -3500,8 +3813,10 @@ paths:
         example: DESC
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -3527,8 +3842,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -3602,8 +3919,10 @@ paths:
         example: DESC
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -3629,8 +3948,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -3704,8 +4025,10 @@ paths:
         example: DESC
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -3731,8 +4054,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -3749,6 +4074,31 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ApplicationCommentDTO"
+  /api/v1/loan-application-intakes:
+    post:
+      tags:
+      - DraftLoanIntakes
+      summary: Create or replay an authorized DRAFT loan intake
+      description: "Preserves exact retained simulation terms. The receipt contains\
+        \ the initial DRAFT/PENDING_DOCUMENTS status, not an offer, contract, approval,\
+        \ or disbursement."
+      operationId: createDraftLoanIntake
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DraftIntakeRequest"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DraftIntakeReceipt"
+      security:
+      - lendingIntakeBearer: []
+      x-disable-idempotency: true
   /api/v1/document-types:
     get:
       tags:
@@ -3759,8 +4109,10 @@ paths:
       parameters:
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -3782,8 +4134,10 @@ paths:
       parameters:
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -3810,8 +4164,10 @@ paths:
       parameters:
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -3833,8 +4189,10 @@ paths:
       parameters:
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -3912,8 +4270,10 @@ paths:
           type: boolean
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -3933,8 +4293,10 @@ paths:
       parameters:
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -3967,8 +4329,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -4001,8 +4365,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -4048,8 +4414,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -4130,8 +4498,10 @@ paths:
         example: DESC
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -4157,8 +4527,10 @@ paths:
           type: string
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -4184,8 +4556,10 @@ paths:
           type: string
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -4211,8 +4585,10 @@ paths:
           type: string
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -4275,8 +4651,10 @@ paths:
         example: DESC
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -4305,8 +4683,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -4319,6 +4699,8 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/ApplicationPartyDTO"
+      security:
+      - lendingIntakeBearer: []
   /api/v1/application-parties/by-application/{applicationId}/primary:
     get:
       tags:
@@ -4335,8 +4717,10 @@ paths:
           format: uuid
       - name: X-Idempotency-Key
         in: header
-        description: "Unique key for idempotent requests. If provided, ensures that\
-          \ identical requests with the same key will only be processed once."
+        description: "Optional retry key for scoped POST, PUT, PATCH, and DELETE response\
+          \ reuse. Safe methods ignore it. Reuse requires configured trusted identity\
+          \ and namespace; changed input returns 409. Business effects require durable\
+          \ application idempotency."
         required: false
         schema:
           type: string
@@ -4353,6 +4737,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ApplicationPartyDTO"
+      security:
+      - lendingIntakeBearer: []
 components:
   schemas:
     LoanApplicationDTO:
@@ -4673,8 +5059,10 @@ components:
           exclusiveMinimum: false
           type: number
         annualIncome:
+          minimum: 0
           type: number
         monthlyExpenses:
+          minimum: 0
           type: number
         employmentTypeId:
           type: string
@@ -4706,11 +5094,13 @@ components:
           description: Date when current employment started
           format: date
         annualPaydays:
+          minimum: 0
           type: integer
           description: Number of paydays per year (typically 12 or 14)
           format: int32
           example: 14
         monthlySalary:
+          minimum: 0
           type: number
           description: Net monthly salary
         housingType:
@@ -4720,6 +5110,7 @@ components:
           description: Housing situation
           example: OWNED
         housingCost:
+          minimum: 0
           type: number
           description: Monthly housing cost (rent or mortgage payment)
         housingStartDate:
@@ -4727,10 +5118,12 @@ components:
           description: Date when current housing situation started
           format: date
         existingLoans:
+          minimum: 0
           type: integer
           description: Number of currently active loans
           format: int32
         otherDebts:
+          minimum: 0
           type: number
           description: Total monthly amount of other recurring debts
         isPrimary:
@@ -4763,6 +5156,8 @@ components:
           type: string
           format: uuid
         requestedAmount:
+          minimum: 0
+          exclusiveMinimum: true
           type: number
         requestedTenorMonths:
           maximum: 360
@@ -5134,6 +5529,7 @@ components:
           type: string
           format: uuid
         approvedAmount:
+          minimum: 0
           type: number
         approvedInterestRate:
           maximum: 100.0
@@ -5391,6 +5787,8 @@ components:
           description: Requested loan / financed amount.
           example: 10000.0
         term:
+          minimum: 0
+          exclusiveMinimum: true
           type: integer
           description: Number of monthly installments.
           format: int32
@@ -5440,6 +5838,208 @@ components:
           format: date-time
           readOnly: true
       description: A persisted lending simulation (PERSONAL_LOAN or LEASING).
+    EvidenceAssociationRequest:
+      required:
+      - actionId
+      - applicationId
+      - contentDigest
+      - documentId
+      - documentIntentDigest
+      - documentResourceTenantId
+      - documentStoredAt
+      - documentTypeCode
+      - fileName
+      - mediaType
+      - partyId
+      type: object
+      properties:
+        actionId:
+          type: string
+          format: uuid
+        applicationId:
+          type: string
+          format: uuid
+        partyId:
+          type: string
+          format: uuid
+        documentResourceTenantId:
+          type: string
+          format: uuid
+        documentId:
+          type: string
+          format: uuid
+        fileName:
+          maxLength: 200
+          minLength: 0
+          type: string
+        documentTypeCode:
+          pattern: "[A-Z][A-Z0-9_]{0,49}"
+          type: string
+        mediaType:
+          maxLength: 100
+          minLength: 0
+          type: string
+        contentLength:
+          maximum: 2097152
+          minimum: 1
+          type: integer
+          format: int64
+        contentDigest:
+          pattern: "[a-f0-9]{64}"
+          type: string
+        documentIntentDigest:
+          pattern: "[a-f0-9]{64}"
+          type: string
+        documentStoredAt:
+          $ref: "#/components/schemas/FireflyInstant"
+    EvidenceAssociationReceipt:
+      required:
+      - attachedAt
+      - documentStoredAt
+      type: object
+      properties:
+        actionId:
+          type: string
+          format: uuid
+        applicationId:
+          type: string
+          format: uuid
+        partyId:
+          type: string
+          format: uuid
+        resourceTenantId:
+          type: string
+          format: uuid
+        associationId:
+          type: string
+          format: uuid
+        documentResourceTenantId:
+          type: string
+          format: uuid
+        documentId:
+          type: string
+          format: uuid
+        documentTypeId:
+          type: string
+          format: uuid
+        documentTypeCode:
+          type: string
+        fileName:
+          type: string
+        mediaType:
+          type: string
+        contentLength:
+          type: integer
+          format: int64
+        contentDigest:
+          type: string
+        documentIntentDigest:
+          type: string
+        documentStoredAt:
+          $ref: "#/components/schemas/FireflyInstant"
+        state:
+          type: string
+        verificationStatus:
+          type: string
+        attachedAt:
+          $ref: "#/components/schemas/FireflyInstant"
+        replayed:
+          type: boolean
+        intentDigest:
+          type: string
+    EvidenceAssociationError:
+      type: object
+      properties:
+        actionId:
+          type: string
+          format: uuid
+        code:
+          type: string
+        outcome:
+          type: string
+          enum:
+          - REFUSED
+          - CONFLICT
+          - OUTCOME_UNKNOWN
+          - COMMITTED_RESPONSE_UNAVAILABLE
+          - OBSERVATION_UNAVAILABLE
+        recovery:
+          type: string
+    DraftIntakeRequest:
+      required:
+      - currency
+      - partyId
+      - productId
+      - requestId
+      - requestedAmount
+      - simulationId
+      - term
+      type: object
+      properties:
+        requestId:
+          type: string
+          format: uuid
+        simulationId:
+          type: string
+          format: uuid
+        productId:
+          type: string
+          format: uuid
+        partyId:
+          type: string
+          format: uuid
+        requestedAmount:
+          minimum: 0.01
+          exclusiveMinimum: false
+          type: number
+        term:
+          minimum: 1
+          type: integer
+          format: int32
+        currency:
+          pattern: "[A-Z]{3}"
+          type: string
+        purpose:
+          maxLength: 50
+          type: string
+    DraftIntakeReceipt:
+      type: object
+      properties:
+        requestId:
+          type: string
+          format: uuid
+        applicationId:
+          type: string
+          format: uuid
+        simulationId:
+          type: string
+          format: uuid
+        productId:
+          type: string
+          format: uuid
+        partyId:
+          type: string
+          format: uuid
+        requestedAmount:
+          type: number
+        term:
+          type: integer
+          format: int32
+        currency:
+          type: string
+        purpose:
+          type: string
+        initialStatusCode:
+          type: string
+        initialSubStatusCode:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        replayed:
+          type: boolean
+        intentDigest:
+          type: string
     UpdateSimulationCalculationsRequest:
       required:
       - monthlyPayment
@@ -5494,11 +6094,13 @@ components:
           description: Date when current employment started
           format: date
         annualPaydays:
+          minimum: 0
           type: integer
           description: Number of paydays per year
           format: int32
           example: 14
         monthlySalary:
+          minimum: 0
           type: number
           description: Net monthly salary
         housingType:
@@ -5508,6 +6110,7 @@ components:
           description: Housing situation
           example: OWNED
         housingCost:
+          minimum: 0
           type: number
           description: Monthly housing cost (rent or mortgage payment)
         housingStartDate:
@@ -5515,10 +6118,12 @@ components:
           description: Date when current housing situation started
           format: date
         existingLoans:
+          minimum: 0
           type: integer
           description: Number of currently active loans
           format: int32
         otherDebts:
+          minimum: 0
           type: number
           description: Total monthly amount of other recurring debts
       description: Partial-update payload for the 12 economic and employment fields
@@ -5945,3 +6550,11 @@ components:
           format: int32
       description: Represents a paginated response containing a list of items and
         pagination metadata.
+    FireflyInstant:
+      type: string
+      format: date-time
+  securitySchemes:
+    lendingIntakeBearer:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

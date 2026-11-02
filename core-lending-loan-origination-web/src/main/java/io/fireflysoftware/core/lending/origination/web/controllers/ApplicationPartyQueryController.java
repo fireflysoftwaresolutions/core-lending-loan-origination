@@ -20,6 +20,7 @@ package io.fireflysoftware.core.lending.origination.web.controllers;
 import io.fireflysoftware.core.lending.origination.core.services.ApplicationPartyService;
 import io.fireflysoftware.core.lending.origination.interfaces.dtos.ApplicationPartyDTO;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,6 +40,7 @@ public class ApplicationPartyQueryController {
     private final ApplicationPartyService service;
 
     @GetMapping("/by-party/{partyId}")
+    @SecurityRequirement(name = "lendingIntakeBearer")
     @Operation(
             summary = "List application-party links for a party",
             description = "Returns every application-party row that references the given party, "
